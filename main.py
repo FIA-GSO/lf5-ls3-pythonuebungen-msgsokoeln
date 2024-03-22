@@ -27,12 +27,12 @@ class R2D2:
 
 
 # Initialize population
-r2d2_population = R2D2(100, 50, 25)
+# r2d2_population = R2D2(100, 50, 25)
 
 # Simulate for 10 steps
-for _ in range(10):
-    print(r2d2_population)
-    r2d2_population.step()
+# for _ in range(10):
+    # print(r2d2_population)
+    # r2d2_population.step()
 
 #---------------------Aufgabe 2 Streichholz------------------------------
 #IMPLEMENT YOUR SOLUTION FOR THE STEICHHOLZSPIEL HERE
@@ -60,7 +60,7 @@ def matchstick_game():
     print("Player B (Human), you must take the last matchstick. You lose!")
 
 # Call the function to start the game
-matchstick_game()
+# matchstick_game()
 
 
 #---------------------Aufgabe 3 Heron ------------------------------------
@@ -88,33 +88,41 @@ def heron_method(number):
     return laenge_a
 
 # Rufe die Funktion mit einem dynamischen Wert auf
-number = int(input("Geben Sie eine Zahl an von der Sie die Quadratwurzel berechnen möchten: "))
-print(f"Die Quadratwurzel von {number} ist ungefähr {heron_method(number)}")
+# number = int(input("Geben Sie eine Zahl an von der Sie die Quadratwurzel berechnen möchten: "))
+# print(f"Die Quadratwurzel von {number} ist ungefähr {heron_method(number)}")
 
 #---------------------Aufgabe 4 Quersumme------------------------------
 #IMPLEMENT, IF NECESSARY, EXERCISE 4 HERE BUT USE A FUNCTION!
+
+def quersumme_berechnen(zahl):
+    return sum(int(ziffer) for ziffer in str(zahl))
+
+#zahl = int(input("Geben Sie eine Zahl ein: "))
+#print("Die Quersumme der eingegebenen Zahl ist:", quersumme_berechnen(zahl))
 
 
 #---------------MANAGEMENT----------------------
 #-------------COMMENT/UNCOMMENT lines to launch the different exercises
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print("You need to adjust this code to run your implementation")
-
     # Aufgabe 1
-    print()
-    # print (compute_r2d2_population(5))
+    if input("Möchten Sie Aufgabe 1 ausführen? (j/n): ").lower() == 'j':
+        print()
+        r2d2_population = R2D2(100, 50, 25)
+        for _ in range(5):
+            print(r2d2_population)
+            r2d2_population.step()
 
     # Aufgabe 2
-    # TO BE IMPLEMENTED
+    if input("Möchten Sie Aufgabe 2 ausführen? (j/n): ").lower() == 'j':
+        matchstick_game()
 
     # Aufgabe 3
-    print (f"Die Wurzel für die Fläche 25 und Grenze 0.01 nach Heron ist: {heron_verfahren(25, 0.01)}")
+    if input("Möchten Sie Aufgabe 3 ausführen? (j/n): ").lower() == 'j':
+        number = int(input("Geben Sie eine Zahl an von der Sie die Quadratwurzel berechnen möchten: "))
+        print(f"Die Quadratwurzel von {number} ist ungefähr {heron_method(number)}")
 
     # Aufgabe 4
-    # TO BE IMPLEMENTED
-
-    # Use a breakpoint in the code line below to debug your script.
-
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    if input("Möchten Sie Aufgabe 4 ausführen? (j/n): ").lower() == 'j':
+        zahl = int(input("Geben Sie eine Zahl ein von der  Sie die Quersumme wissen wollen: "))
+        print("Die Quersumme der eingegebenen Zahl ist:", quersumme_berechnen(zahl))
