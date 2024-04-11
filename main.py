@@ -69,7 +69,8 @@ def matchstick_game(human_starts=False, random_starts=False):
         print(f"Player B (Human) takes {player_b_matchsticks} matchsticks. Remaining matchsticks: {matchsticks}")
 
         # Player A (Computer) takes a complementary number so that a total of 7 are taken
-        player_a_matchsticks = 7 - player_b_matchsticks
+        # If the remaining matchsticks are less than the complementary number, take all remaining matchsticks
+        player_a_matchsticks = min(7 - player_b_matchsticks, matchsticks)
         matchsticks -= player_a_matchsticks
         print(f"Player A (Computer) takes {player_a_matchsticks} matchsticks. Remaining matchsticks: {matchsticks}")
 
