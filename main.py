@@ -48,6 +48,12 @@ def matchstick_game():
     while matchsticks > 1:
         # Player B (Human) takes 1 to 6 matchsticks
         player_b_matchsticks = int(input("Player B (Human), how many matchsticks do you want to take (1-6)? "))
+        
+        # Check if the input is within the valid range
+        while player_b_matchsticks < 1 or player_b_matchsticks > 6:
+            print("Invalid input. Please enter a number between 1 and 6.")
+            player_b_matchsticks = int(input("Player B (Human), how many matchsticks do you want to take (1-6)? "))
+        
         matchsticks -= player_b_matchsticks
         print(f"Player B (Human) takes {player_b_matchsticks} matchsticks. Remaining matchsticks: {matchsticks}")
 
