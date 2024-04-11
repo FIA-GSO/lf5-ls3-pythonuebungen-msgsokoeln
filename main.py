@@ -133,7 +133,7 @@ if __name__ == '__main__':
 
     # Aufgabe 2
     if input("Möchten Sie Aufgabe 2 ausführen? (j/n): ").lower() == 'j':
-        matchstick_game(human_starts=True, random_starts=False)
+        matchstick_game(human_starts=False, random_starts=False)
 
     # Aufgabe 3
     if input("Möchten Sie Aufgabe 3 ausführen? (j/n): ").lower() == 'j':
