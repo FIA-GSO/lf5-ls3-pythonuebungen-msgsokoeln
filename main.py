@@ -37,9 +37,20 @@ class R2D2:
 #---------------------Aufgabe 2 Streichholz------------------------------
 #IMPLEMENT YOUR SOLUTION FOR THE STEICHHOLZSPIEL HERE
 
-def matchstick_game():
+import random
+
+def matchstick_game(human_starts=False, random_starts=False):
     # Initialize the number of matchsticks
     matchsticks = 31
+
+    # If the human player starts, ask them to set the number of matchsticks
+    if human_starts:
+        matchsticks = int(input("Player B (Human), how many matchsticks do you want to start with? "))
+
+    # If the computer player starts randomly, set a random number of matchsticks
+    if random_starts:
+        matchsticks = random.randint(10, 50)
+        print(f"Player A (Computer) starts with {matchsticks} matchsticks.")
 
     # Player A (Computer) starts the game by taking 2 matchsticks
     matchsticks -= 2
@@ -65,8 +76,8 @@ def matchstick_game():
     # Player B (Human) must take the last matchstick and therefore loses
     print("Player B (Human), you must take the last matchstick. You lose!")
 
-# Call the function to start the game
-# matchstick_game()
+# Call the function with the optional variants
+# matchstick_game(human_starts=True, random_starts=True)
 
 
 #---------------------Aufgabe 3 Heron ------------------------------------
@@ -121,7 +132,7 @@ if __name__ == '__main__':
 
     # Aufgabe 2
     if input("Möchten Sie Aufgabe 2 ausführen? (j/n): ").lower() == 'j':
-        matchstick_game()
+        matchstick_game(human_starts=True, random_starts=False)
 
     # Aufgabe 3
     if input("Möchten Sie Aufgabe 3 ausführen? (j/n): ").lower() == 'j':
